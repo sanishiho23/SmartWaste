@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Waste</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <div class="logo-icon">♻️</div>
+      <h1>Smart Waste</h1>
+    </div>
+    <nav>
+      <a href="#">🏠 Beranda</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Selamat Datang di Smart Waste</h2>
+      <p>Pemilahan sampah otomatis berbasis AI & IoT 🌱</p>
+    </section>
+
+    <!-- Tombol Refresh -->
+    <div class="refresh-wrapper">
+      <button onclick="fetchStatus()">🔄 Refresh Data</button>
+      <span id="last-fetch">Auto-refresh setiap 10 detik</span>
+    </div>
+
+    <!-- Status Grid -->
+    <section class="status-grid">
+      <div class="card green" onclick="openModal()">
+        <div class="icon-wrapper">🗃️</div>
+        <div>
+          <h3>Status Kompartemen</h3>
+          <p id="status-kompartemen">Organik terbuka</p>
+        </div>
+      </div>
+
+      <div class="card green-dark">
+        <div class="icon-wrapper">📄</div>
+        <div>
+          <h3>Jenis Sampah</h3>
+          <p id="jenis-sampah">Kertas</p>
+        </div>
+      </div>
+
+      <div class="card green-light">
+        <div class="icon-wrapper">⏱️</div>
+        <div>
+          <h3>Terakhir Diperbarui</h3>
+          <p id="waktu-update">27 Mei 2025, 15:30 WIB</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grafik Statistik -->
+    <section class="chart-container">
+      <h2>Statistik Kapasitas Kompartemen</h2>
+      <canvas id="trashChart" width="400" height="200"></canvas>
+    </section>
+  </main>
+
+  <!-- Modal Detail -->
+  <div id="statusModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3>Detail Kompartemen</h3>
+      <p>Tempat sampah organik saat ini terbuka karena terdeteksi sampah kertas. Silakan masukkan dengan benar.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Smart Waste. Untuk masa depan yang bersih dan hijau.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
